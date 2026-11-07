@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Contact | Omar Nedal Khudair 178211</title>
+   <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   <header>
+      <nav>
+         <a href="index.html">Home</a>
+         <a href="contact.html">Contact</a>
+         <a href="mailto:onkhudair24@cit.just.edu.jo">Email</a>
+      </nav>
+   </header>
+
+   <main>
+      <div class="section">
+         <h1>Contact</h1>
+         <form id="contact-form" novalidate>
+            <p>
+               <label for="full-name">Full Name</label><br>
+               <input type="text" id="full-name" name="fullName">
+            </p>
+            <p>
+               <label for="email">Email Address</label><br>
+               <input type="email" id="email" name="email">
+            </p>
+            <p>
+               <label for="country">Country</label><br>
+               <input type="text" id="country" name="country">
+            </p>
+            <p>
+               <label for="comments">Comments</label><br>
+               <textarea id="comments" name="comments" rows="6"></textarea>
+            </p>
+            <button type="submit">Submit</button>
+         </form>
+      </div>
+   </main>
+   <script>
+  const form = document.getElementById("contact-form");
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const name = document.getElementById("full-name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("comments").value;
+    const country = document.getElementById("country").value;
+
+    if (name === "") {
+      alert("Please enter your name.");
+      return;
+    }
+
+    if (email === "") {
+      alert("Please enter your email.");
+      return;
+    }
+
+    if (!email.includes("@") || !email.includes(".")) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+     if (country === "") {
+      alert("Please enter your country.");
+      return;
+    }
+
+    if (message === "") {
+      alert("Please enter a message.");
+      return;
+    }
+
+
+    alert("Your form was submitted successfully!");
+  });
+</script>
+</body>
+</html>
